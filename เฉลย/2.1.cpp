@@ -12,3 +12,16 @@ Stack CreateStack(Stack r){
     }
     return r;
 }
+Stack top(Stack r){
+    return r->n;
+}
+int pop(Stack r){
+    if(r->n==NULL){
+        return NULL;
+    }
+    Stack p = r->n;
+    r->n=r->n->n;
+    int a = p->n->v;
+    delete(p);
+    return a;
+}
